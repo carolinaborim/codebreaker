@@ -25,22 +25,6 @@ module Codebreaker
 				expect(output).to receive(:puts).with('++++')
 				game.guess('1234')
 			end
-
-			context "when it receives more than 4 digits" do
-				it "sends the 'Invalid guess!' message" do
-					game.start('1234')
-					expect(output).to receive(:puts).with('Invalid guess!')
-					game.guess('11111')
-				end
-			end
-
-			context "when it receives non digits characters" do
-				it "sends the 'Invalid guess!' message" do
-					game.start('1234')
-					expect(output).to receive(:puts).with('Invalid guess!')
-					game.guess('asd')
- 				end
-			end
 		end
 	end
 end
