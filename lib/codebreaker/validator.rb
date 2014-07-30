@@ -10,7 +10,6 @@ module Codebreaker
       guess.length == allowed_number_of_digits && is_integer?(guess)
     end
 
-
     def is_integer?(guess)
       !!(guess =~ /\A[-+]?[0-9]+\z/)
     end

@@ -25,6 +25,14 @@ module Codebreaker
 				expect(output).to receive(:puts).with('++++')
 				game.guess('1234')
 			end
+
+			context "when it receives an invalid guess" do
+				it "sends 'Invalid guess!' to the output" do
+					game.start('1234')
+					expect(output).to receive(:puts).with('Invalid guess!')
+					game.guess('55555')
+				end
+			end
 		end
 	end
 end
